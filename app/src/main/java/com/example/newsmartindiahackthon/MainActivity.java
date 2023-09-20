@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button camera, gallery,copbut;
     ImageView imageView;
-    TextView result;
+    TextView result,clasi;
     int imageSize = 256;
     String summa="";
     @SuppressLint("MissingInflatedId")
@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
         camera = findViewById(R.id.button);
         gallery = findViewById(R.id.button2);
         copbut=findViewById(R.id.copbut);
+        clasi=findViewById(R.id.classified);
+        clasi.setVisibility(View.INVISIBLE);
         copbut.setVisibility(View.INVISIBLE);
         result = findViewById(R.id.result);
         imageView = findViewById(R.id.imageView);
@@ -125,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
                     "Tomato_Late blight","Tomato_Healthy","Cotton_Diseased leaf","Cotton_Diseased plant","Cotton_Healthy Leaf","Cotton_Healthy plant"};
             // Releases model resources if no longer used.
             String res="";
+            clasi.setVisibility(View.VISIBLE);
             System.out.println(maxconfi);
             String []resarr=classes[maxpos].split("_");
             res+="Plant: "+resarr[0]+"\nDisease: "+resarr[1];
